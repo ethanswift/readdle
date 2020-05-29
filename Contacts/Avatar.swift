@@ -1,5 +1,5 @@
 //
-//  Detailed.swift
+//  Avatar.swift
 //  Contacts
 //
 //  Created by ehsan sat on 5/29/20.
@@ -8,12 +8,9 @@
 
 import UIKit
 
-class Detailed: UIView {
+class Avatar {
     init(<#parameters#>) {
         <#statements#>
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    func
 }

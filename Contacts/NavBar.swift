@@ -1,5 +1,5 @@
 //
-//  Detailed.swift
+//  NavigationController.swift
 //  Contacts
 //
 //  Created by ehsan sat on 5/29/20.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class Detailed: UIView {
+class NavBar: UINavigationController {
     init(<#parameters#>) {
         <#statements#>
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
