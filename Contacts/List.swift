@@ -24,25 +24,30 @@ class List: UIView {
     }
     
     func setUpTableView() {
-        
+        self.addSubview(list)
+        list.dataSource = self
+        list.delegate = self
+        list.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    func setUpConstraints() {
-        
-    }
+
     
 }
 
 extension List: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = list.dequeueReusableCell(withIdentifier: "")!
+        return cell
     }
 }
 
 extension List: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     
 }

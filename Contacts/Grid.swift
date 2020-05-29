@@ -24,27 +24,28 @@ class Grid: UIView {
     }
     
     func setUpCollectionView() {
-        
+        self.addSubview(grid)
+        grid.dataSource = self
+        grid.delegate = self
+//        grid.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
     }
-    
-    func setUpConstraints() {
-        
-    }
+
 }
 
 extension Grid: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 60
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = UICollectionViewCell()
+        return cell
     }
     
     
 }
 
-extension Grid: UICollectionViewDelegate {
+extension Grid: UICollectionViewDelegate, UICollectionViewFlowLayout {
     
 }
 

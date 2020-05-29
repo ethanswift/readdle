@@ -9,8 +9,8 @@
 import UIKit
 
 class NavBar: UINavigationController {
-    init(<#parameters#>) {
-        <#statements#>
+    override init(rootViewController: UIViewController) {
+        super.init(rootViewController: ViewController())
     }
     
     required init?(coder aDecoder: NSCoder) {

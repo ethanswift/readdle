@@ -10,9 +10,7 @@ import Foundation
 import CryptoKit
 
 class HashedEmail {
-    var email: String
-    init(email: String) {
-        self.email = email
+    init() {
     }
     func MD5(string: String) -> String {
         let digest = Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data())

@@ -9,13 +9,11 @@
 import Foundation
 
 struct User: Codable {
-    var id: Int?
     var email: String?
     var name: String?
     var online: Bool?
     var avatar: String?
     enum CodingKeys: String, CodingKey {
-        case id
         case email
         case name
         case online

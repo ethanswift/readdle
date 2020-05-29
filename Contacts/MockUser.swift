@@ -9,15 +9,8 @@
 import UIKit
 
 class MockUser {
-    private var users: Array<User>
-    var numberOfUsers: Int
-    init(numberOfUsers: Int) {
-        self.numberOfUsers = numberOfUsers
-    }
-    func generateMockUsers(number: Int) -> Array<User> {
-        let users = 
-        for i in 0..<number {
-            
-        }
-    }
+    // preferably get the hash from HashedEmail class which has been created in HashedEmail.swift
+    // and turn an account email into hash
+    let mockUserEmail = ""
+    let mockUserHash = "205e460b479e2e5b48aec07710c08d50"
 }
