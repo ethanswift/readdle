@@ -9,7 +9,7 @@
 import UIKit
 
 class API {
-//    var user: User?
+    var apiUser: User?
     init() {
     }
     func retrieveData() -> User {
@@ -27,6 +27,7 @@ class API {
             let avatarUrl = "https://secure.gravatar.com/avatar/\(hash)"
             let retrievedUser = User(email: "Beau.Lebens@example.com", name: displayName, online: true, avatar: avatarUrl)
             user = retrievedUser
+            self.apiUser = user
         } catch {
             print(error)
         }

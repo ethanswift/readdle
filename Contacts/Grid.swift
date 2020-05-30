@@ -13,6 +13,7 @@ class Grid: UIView {
     weak var delegate : UICollectionViewDelegate?
     
     private var grid = UICollectionView()
+    private var cellId = "GridCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +28,7 @@ class Grid: UIView {
         self.addSubview(grid)
         grid.dataSource = self
         grid.delegate = self
-//        grid.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
+        grid.register(GridCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
 
 }
@@ -38,7 +39,7 @@ extension Grid: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
+        let cell = grid.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GridCollectionViewCell
         return cell
     }
     

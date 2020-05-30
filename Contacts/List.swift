@@ -13,6 +13,7 @@ class List: UIView {
     weak var delegate: UITableViewDelegate?
     
     private var list = UITableView()
+    private var cellId = "ListCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,6 +28,7 @@ class List: UIView {
         self.addSubview(list)
         list.dataSource = self
         list.delegate = self
+        list.register(ListTableViewCell.self, forCellReuseIdentifier: cellId)
         list.translatesAutoresizingMaskIntoConstraints = false
     }
 
@@ -39,7 +41,7 @@ extension List: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = list.dequeueReusableCell(withIdentifier: "")!
+        let cell = list.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ListTableViewCell
         return cell
     }
 }
