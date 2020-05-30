@@ -42,10 +42,9 @@ extension Grid: UICollectionViewDataSource {
         return cell
     }
     
-    
 }
 
-extension Grid: UICollectionViewDelegate, UICollectionViewFlowLayout {
+extension Grid: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
 }
 

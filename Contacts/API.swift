@@ -9,32 +9,27 @@
 import UIKit
 
 class API {
-    var email: String
-    init(email: String) {
-        self.email = email
+//    var user: User?
+    init() {
     }
-    func retrieveData(email: String) {
-        DispatchQueue.global(qos: .background).async {
+    func retrieveData() -> User {
+        var user: User?
             let mockUser = MockUser()
             let hash = mockUser.mockUserHash
-            let url = URL(fileURLWithPath: "https://en.gravatar.com/\(hash).json")
-            let sessionConfig = URLSessionConfiguration.default
-            let session = URLSession(configuration: sessionConfig)
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            
-            let task = session.dataTask(with: request) { (data, response, error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                }
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, Any>
-                    print(json)
-                } catch {
-                    print(error)
-                }
-            }
-            task.resume()
+            let url = URL(string: "https://www.gravatar.com/\(hash).json")
+        do {
+            let contents = try String(contentsOf: url!, encoding: .utf8)
+            let data = contents.data(using: .utf8)
+            let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+            let entry = json["entry"] as! [Any]
+            let entryJSON = entry[0] as! [String: Any]
+            let displayName = entryJSON["displayName"] as! String
+            let avatarUrl = "https://secure.gravatar.com/avatar/\(hash)"
+            let retrievedUser = User(email: "Beau.Lebens@example.com", name: displayName, online: true, avatar: avatarUrl)
+            user = retrievedUser
+        } catch {
+            print(error)
         }
+        return user!
     }
 }
