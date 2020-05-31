@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C06CFED72480A9C200240AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFED62480A9C200240AD1 /* AppDelegate.swift */; };
 		C06CFED92480A9C200240AD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFED82480A9C200240AD1 /* SceneDelegate.swift */; };
-		C06CFEDB2480A9C200240AD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFEDA2480A9C200240AD1 /* HomeViewController.swift */; };
+		C06CFEDB2480A9C200240AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFEDA2480A9C200240AD1 /* ViewController.swift */; };
 		C06CFEDE2480A9C200240AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06CFEDC2480A9C200240AD1 /* Main.storyboard */; };
 		C06CFEE02480A9C700240AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06CFEDF2480A9C700240AD1 /* Assets.xcassets */; };
 		C06CFEE32480A9C700240AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06CFEE12480A9C700240AD1 /* LaunchScreen.storyboard */; };
@@ -30,7 +30,7 @@
 		C06CFED32480A9C200240AD1 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06CFED62480A9C200240AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06CFED82480A9C200240AD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C06CFEDA2480A9C200240AD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C06CFEDA2480A9C200240AD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C06CFEDD2480A9C200240AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C06CFEDF2480A9C700240AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C06CFEE22480A9C700240AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			children = (
 				C06CFED62480A9C200240AD1 /* AppDelegate.swift */,
 				C06CFED82480A9C200240AD1 /* SceneDelegate.swift */,
-				C06CFEDA2480A9C200240AD1 /* HomeViewController.swift */,
+				C06CFEDA2480A9C200240AD1 /* ViewController.swift */,
 				C06CFF002483E7F800240AD1 /* DetailViewController.swift */,
 				C06CFEDC2480A9C200240AD1 /* Main.storyboard */,
 				C06CFEDF2480A9C700240AD1 /* Assets.xcassets */,
@@ -177,7 +177,7 @@
 				C06CFEF12480C75B00240AD1 /* Detailed.swift in Sources */,
 				C06CFEF52481209700240AD1 /* API.swift in Sources */,
 				C06CFEFB2481A1C900240AD1 /* ListTableViewCell.swift in Sources */,
-				C06CFEDB2480A9C200240AD1 /* HomeViewController.swift in Sources */,
+				C06CFEDB2480A9C200240AD1 /* ViewController.swift in Sources */,
 				C06CFED72480A9C200240AD1 /* AppDelegate.swift in Sources */,
 				C06CFEFD2481A1E900240AD1 /* GridCollectionViewCell.swift in Sources */,
 				C06CFEF924814AF100240AD1 /* HashedEmail.swift in Sources */,

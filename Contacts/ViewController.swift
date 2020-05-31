@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class ViewController: UIViewController {
     private var apiCall = API()
     private var listTable = List(frame: .zero, style: .plain)
     private var layout = UICollectionViewFlowLayout()

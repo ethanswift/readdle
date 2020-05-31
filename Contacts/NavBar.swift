@@ -10,7 +10,7 @@ import UIKit
 
 class NavBar: UINavigationController {
     override init(rootViewController: UIViewController) {
-        super.init(rootViewController: HomeViewController())
+        super.init(rootViewController: rootViewController)
         
     }
     
