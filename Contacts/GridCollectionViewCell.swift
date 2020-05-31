@@ -39,11 +39,19 @@ class GridCollectionViewCell: UICollectionViewCell {
         onlineDotView.frame.size = CGSize(width: 6, height: 6)
         onlineDotView.layer.cornerRadius = onlineDotView.frame.size.height / 2
         self.addSubview(onlineDotView)
-        
-        
+        makeConstraints()   
     }
     
     func makeConstraints() {
-        
+        avatarView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
+        NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
+        NSLayoutConstraint(item: avatarView, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        onlineDotView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: onlineDotView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 6).isActive = true
+        NSLayoutConstraint(item: onlineDotView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 6).isActive = true
+        NSLayoutConstraint(item: onlineDotView, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1, constant: 42.677).isActive = true
+        NSLayoutConstraint(item: onlineDotView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 42.677).isActive = true
     }
 }

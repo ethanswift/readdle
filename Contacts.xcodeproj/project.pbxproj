@@ -23,6 +23,7 @@
 		C06CFEF924814AF100240AD1 /* HashedEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFEF824814AF100240AD1 /* HashedEmail.swift */; };
 		C06CFEFB2481A1C900240AD1 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFEFA2481A1C900240AD1 /* ListTableViewCell.swift */; };
 		C06CFEFD2481A1E900240AD1 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFEFC2481A1E900240AD1 /* GridCollectionViewCell.swift */; };
+		C06CFEFF248333B500240AD1 /* SegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFEFE248333B500240AD1 /* SegmentControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C06CFEF824814AF100240AD1 /* HashedEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashedEmail.swift; sourceTree = "<group>"; };
 		C06CFEFA2481A1C900240AD1 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		C06CFEFC2481A1E900240AD1 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		C06CFEFE248333B500240AD1 /* SegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				C06CFED62480A9C200240AD1 /* AppDelegate.swift */,
 				C06CFED82480A9C200240AD1 /* SceneDelegate.swift */,
 				C06CFEDA2480A9C200240AD1 /* ViewController.swift */,
+				C06CFEFE248333B500240AD1 /* SegmentControl.swift */,
 				C06CFEDC2480A9C200240AD1 /* Main.storyboard */,
 				C06CFEDF2480A9C700240AD1 /* Assets.xcassets */,
 				C06CFEE12480A9C700240AD1 /* LaunchScreen.storyboard */,
@@ -173,6 +176,7 @@
 				C06CFEF32480C78500240AD1 /* NavBar.swift in Sources */,
 				C06CFEF12480C75B00240AD1 /* Detailed.swift in Sources */,
 				C06CFEF52481209700240AD1 /* API.swift in Sources */,
+				C06CFEFF248333B500240AD1 /* SegmentControl.swift in Sources */,
 				C06CFEFB2481A1C900240AD1 /* ListTableViewCell.swift in Sources */,
 				C06CFEDB2480A9C200240AD1 /* ViewController.swift in Sources */,
 				C06CFED72480A9C200240AD1 /* AppDelegate.swift in Sources */,

@@ -8,27 +8,22 @@
 
 import UIKit
 
-class Grid: UIView {
+class Grid: UICollectionView {
     
-    weak var delegate : UICollectionViewDelegate?
     
-    private var grid = UICollectionView()
-    private var cellId = "GridCell"
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
         setUpCollectionView()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     func setUpCollectionView() {
-        self.addSubview(grid)
-        grid.dataSource = self
-        grid.delegate = self
-        grid.register(GridCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        self.dataSource = self
+        self.delegate = self
+        self.register(GridCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
 
 }
@@ -39,7 +34,7 @@ extension Grid: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = grid.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! GridCollectionViewCell
+        let cell = self.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GridCollectionViewCell
         return cell
     }
     

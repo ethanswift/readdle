@@ -17,41 +17,103 @@ class ListTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setUpView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func setUpView() {
+        contentView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         // Initialization code
+        contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 50)
         avatarView.frame.size = CGSize(width: 50, height: 50)
-        avatarView.layer.cornerRadius = avatarView.frame.height / 2
         avatarView.layer.masksToBounds = true
+        avatarView.layer.cornerRadius = avatarView.frame.height / 2
         if api.apiUser != nil {
             avatarView.image = UIImage(contentsOfFile: api.apiUser!.avatar!)
+            print("api image url: ", api.apiUser?.avatar!)
         } else {
             // use the function
+//            let mockUser = MockUser()
+//            let hash = mockUser.mockUserHash
+//            let url = "https://www.gravatar.com/avatar/\(hash).jpg"
+//            let avatarURL = URL(fileURLWithPath: url)
+//            DispatchQueue.global().async {
+//                do {
+//                    let avatarData = try Data(contentsOf: avatarURL)
+//                    let avatarImg = UIImage(data: avatarData)
+//                    DispatchQueue.main.async {
+//                        self.avatarView.image = avatarImg
+            self.avatarView.image = #imageLiteral(resourceName: "323a3484421525602cd8e437ddb3f4ee")
+//                    }
+//                    print("using url")
+//                } catch {
+//                    print(error)
+//                }
+//            }
         }
         avatarView.contentMode = .scaleAspectFit
         self.addSubview(avatarView)
         onlineDotView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         onlineDotView.layer.masksToBounds = true
-        onlineDotView.frame.size = CGSize(width: 6, height: 6)
+        onlineDotView.frame.size = CGSize(width: 8, height: 8)
         onlineDotView.layer.cornerRadius = onlineDotView.frame.size.height / 2
         self.addSubview(onlineDotView)
-        if api.apiUser != nil {
-            nameLbl.text = api.apiUser?.name
-        } else {
-            // use the function
-        }
+        nameLbl.text = "Beau Lebens"
         nameLbl.font = UIFont.systemFont(ofSize: 16)
         self.addSubview(nameLbl)
+        setUpConstraints()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+//        contentView.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+//        // Initialization code
+//        contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 50)
+//        avatarView.frame.size = CGSize(width: 50, height: 50)
+//        avatarView.layer.masksToBounds = true
+//        avatarView.layer.cornerRadius = avatarView.frame.height / 2
+//        if api.apiUser != nil {
+//            avatarView.image = UIImage(contentsOfFile: api.apiUser!.avatar!)
+//        } else {
+//            // use the function
+//        }
+//        avatarView.contentMode = .scaleAspectFit
+//        self.addSubview(avatarView)
+//        onlineDotView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+//        onlineDotView.layer.masksToBounds = true
+//        onlineDotView.frame.size = CGSize(width: 6, height: 6)
+//        onlineDotView.layer.cornerRadius = onlineDotView.frame.size.height / 2
+//        self.addSubview(onlineDotView)
+//        if api.apiUser != nil {
+//            nameLbl.text = api.apiUser?.name
+//        } else {
+//            // use the function
+//        }
+//        nameLbl.font = UIFont.systemFont(ofSize: 16)
+//        self.addSubview(nameLbl)
+//        setUpConstraints()
     }
     
     func setUpConstraints() {
-        
+        avatarView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
+        NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
+        NSLayoutConstraint(item: avatarView, attribute: .left, relatedBy: .equal, toItem: self.contentView, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: self.contentView, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: avatarView, attribute: .bottom, relatedBy: .equal, toItem: self.contentView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        onlineDotView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: onlineDotView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 8).isActive = true
+        NSLayoutConstraint(item: onlineDotView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 8).isActive = true
+        NSLayoutConstraint(item: onlineDotView, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1, constant: 42.677).isActive = true
+        NSLayoutConstraint(item: onlineDotView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 42.677).isActive = true
+        nameLbl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: nameLbl, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 200).isActive = true
+        NSLayoutConstraint(item: nameLbl, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30).isActive = true
+        NSLayoutConstraint(item: nameLbl, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1, constant: 70).isActive = true
+        NSLayoutConstraint(item: nameLbl, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 10).isActive = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

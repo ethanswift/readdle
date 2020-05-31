@@ -8,40 +8,35 @@
 
 import UIKit
 
-class List: UIView {
+class List: UITableView {
     
-    weak var delegate: UITableViewDelegate?
-    
-    private var list = UITableView()
     private var cellId = "ListCell"
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
         setUpTableView()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setUpTableView()
     }
     
     func setUpTableView() {
-        self.addSubview(list)
-        list.dataSource = self
-        list.delegate = self
-        list.register(ListTableViewCell.self, forCellReuseIdentifier: cellId)
-        list.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    
+        self.dataSource = self
+        self.delegate = self
+        self.register(ListTableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }   
 }
 
 extension List: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 60
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = list.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ListTableViewCell
+        let cell = self.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
         return cell
     }
 }
@@ -50,6 +45,9 @@ extension List: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
 }

@@ -12,6 +12,30 @@ class API {
     var apiUser: User?
     init() {
     }
+    // retrieve data from Gravatar API
+    func retrieveDataFromAPI() -> User {
+        var user: User? = nil
+        let url = "Gravatar API endpoints"
+        let reqURL = URL(fileURLWithPath: url)
+        var request = URLRequest(url: reqURL)
+        request.httpMethod = "GET"
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, Any>
+                let retrievedUser = User()
+                user = retrievedUser
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+        return user!
+    }
+    
     func retrieveData() -> User {
         var user: User?
             let mockUser = MockUser()
@@ -24,7 +48,7 @@ class API {
             let entry = json["entry"] as! [Any]
             let entryJSON = entry[0] as! [String: Any]
             let displayName = entryJSON["displayName"] as! String
-            let avatarUrl = "https://secure.gravatar.com/avatar/\(hash)"
+            let avatarUrl = "https://www.gravatar.com/avatar/\(hash).jpg"
             let retrievedUser = User(email: "Beau.Lebens@example.com", name: displayName, online: true, avatar: avatarUrl)
             user = retrievedUser
             self.apiUser = user
@@ -33,4 +57,5 @@ class API {
         }
         return user!
     }
+    
 }
