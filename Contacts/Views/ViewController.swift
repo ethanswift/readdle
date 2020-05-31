@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     private var listTable = List(frame: .zero, style: .plain)
     private var layout = UICollectionViewFlowLayout()
     private var gridCollection = Grid(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    private var bottomBtn = BottomBtn()
+    var bottomBtnSelected: Bool = false
     
     private var segmentControl = UISegmentedControl(items: ["List", "Grid"])
 
@@ -33,8 +35,27 @@ class ViewController: UIViewController {
         self.view.addSubview(listTable)
         self.view.addSubview(gridCollection)
         self.view.addSubview(segmentControl)
+        self.view.addSubview(bottomBtn)
+        bottomBtn.addTarget(self, action: #selector(btnSelected), for: .touchUpInside)
         
         setUpConstraint()
+        
+    }
+    
+    @objc func btnSelected() {
+        bottomBtnSelected.toggle()
+        let users: [User] = mockUser.generateMockUser()
+        if bottomBtnSelected {
+            for i in 0..<users.count {
+                listTable.cellForRow(at: [0,i])?.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            }
+            self.listTable.reloadData()
+        } else {
+            for i in 0..<users.count {
+                listTable.cellForRow(at: [0,i])?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            }
+            self.listTable.reloadData()
+        }
         
     }
     
@@ -67,6 +88,12 @@ class ViewController: UIViewController {
         NSLayoutConstraint(item: gridCollection, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 25).isActive = true
         NSLayoutConstraint(item: gridCollection, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 200).isActive = true
         NSLayoutConstraint(item: gridCollection, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: -25).isActive = true
+        bottomBtn.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: bottomBtn, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width - 50).isActive = true
+        NSLayoutConstraint(item: bottomBtn, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
+        NSLayoutConstraint(item: bottomBtn, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 25).isActive = true
+        NSLayoutConstraint(item: bottomBtn, attribute: .top, relatedBy: .equal, toItem: listTable, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
+        NSLayoutConstraint(item: bottomBtn, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: -25).isActive = true
     }
 }
 
