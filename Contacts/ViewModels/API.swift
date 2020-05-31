@@ -36,8 +36,8 @@ class API {
         return user!
     }
     
-    func retrieveData() -> User {
-        var user: User?
+    func retrieveData() {
+//        var user: User?
             let mockUser = MockUser()
             let hash = mockUser.mockUserHash
             let url = URL(string: "https://www.gravatar.com/\(hash).json")
@@ -50,12 +50,12 @@ class API {
             let displayName = entryJSON["displayName"] as! String
             let avatarUrl = "https://www.gravatar.com/avatar/\(hash).jpg"
             let retrievedUser = User(email: "Beau.Lebens@example.com", name: displayName, online: true, avatar: avatarUrl)
-            user = retrievedUser
-            self.apiUser = user
+//            user = retrievedUser
+            self.apiUser = retrievedUser
         } catch {
             print(error)
         }
-        return user!
+//        return user!
     }
     
 }

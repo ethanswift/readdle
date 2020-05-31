@@ -21,6 +21,7 @@ class Grid: UICollectionView {
     }
     
     func setUpCollectionView() {
+        self.backgroundColor = .white
         self.dataSource = self
         self.delegate = self
         self.register(GridCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
@@ -41,8 +42,7 @@ extension Grid: UICollectionViewDataSource {
 }
 
 extension Grid: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) { 
     }
     
 }

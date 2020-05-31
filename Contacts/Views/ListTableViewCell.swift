@@ -32,26 +32,8 @@ class ListTableViewCell: UITableViewCell {
         avatarView.layer.cornerRadius = avatarView.frame.height / 2
         if api.apiUser != nil {
             avatarView.image = UIImage(contentsOfFile: api.apiUser!.avatar!)
-            print("api image url: ", api.apiUser?.avatar!)
         } else {
-            // use the function
-//            let mockUser = MockUser()
-//            let hash = mockUser.mockUserHash
-//            let url = "https://www.gravatar.com/avatar/\(hash).jpg"
-//            let avatarURL = URL(fileURLWithPath: url)
-//            DispatchQueue.global().async {
-//                do {
-//                    let avatarData = try Data(contentsOf: avatarURL)
-//                    let avatarImg = UIImage(data: avatarData)
-//                    DispatchQueue.main.async {
-//                        self.avatarView.image = avatarImg
             self.avatarView.image = #imageLiteral(resourceName: "323a3484421525602cd8e437ddb3f4ee")
-//                    }
-//                    print("using url")
-//                } catch {
-//                    print(error)
-//                }
-//            }
         }
         avatarView.contentMode = .scaleAspectFit
         self.addSubview(avatarView)
@@ -68,32 +50,6 @@ class ListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        contentView.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-//        // Initialization code
-//        contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 50)
-//        avatarView.frame.size = CGSize(width: 50, height: 50)
-//        avatarView.layer.masksToBounds = true
-//        avatarView.layer.cornerRadius = avatarView.frame.height / 2
-//        if api.apiUser != nil {
-//            avatarView.image = UIImage(contentsOfFile: api.apiUser!.avatar!)
-//        } else {
-//            // use the function
-//        }
-//        avatarView.contentMode = .scaleAspectFit
-//        self.addSubview(avatarView)
-//        onlineDotView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-//        onlineDotView.layer.masksToBounds = true
-//        onlineDotView.frame.size = CGSize(width: 6, height: 6)
-//        onlineDotView.layer.cornerRadius = onlineDotView.frame.size.height / 2
-//        self.addSubview(onlineDotView)
-//        if api.apiUser != nil {
-//            nameLbl.text = api.apiUser?.name
-//        } else {
-//            // use the function
-//        }
-//        nameLbl.font = UIFont.systemFont(ofSize: 16)
-//        self.addSubview(nameLbl)
-//        setUpConstraints()
     }
     
     func setUpConstraints() {

@@ -12,7 +12,8 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = .orange
+        self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
     }
     

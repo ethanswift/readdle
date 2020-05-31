@@ -24,7 +24,7 @@ class GridCollectionViewCell: UICollectionViewCell {
     }
     
     func setUp () {
-       avatarView.frame.size = CGSize(width: 50, height: 50)
+        avatarView.frame.size = CGSize(width: 50, height: 50)
         avatarView.layer.cornerRadius = avatarView.frame.height / 2
         avatarView.layer.masksToBounds = true
         avatarView.image = #imageLiteral(resourceName: "323a3484421525602cd8e437ddb3f4ee")

@@ -23,6 +23,7 @@ class List: UITableView {
     }
     
     func setUpTableView() {
+        self.separatorStyle = .none
         self.dataSource = self
         self.delegate = self
         self.register(ListTableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -44,10 +45,14 @@ extension List: UITableViewDataSource {
 extension List: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 80
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
 }
