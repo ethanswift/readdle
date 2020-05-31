@@ -10,7 +10,7 @@ import UIKit
 
 class List: UITableView {
     
-    private var cellId = "ListCell"
+    private var users = MockUser()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -33,11 +33,13 @@ class List: UITableView {
 
 extension List: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        let mockUsers = users.generateMockUser()
+        return mockUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
+        cell.nameLbl.text = users.generateMockUser()[indexPath.row].name
         return cell
     }
 }

@@ -24,6 +24,7 @@
 		C06CFEFB2481A1C900240AD1 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFEFA2481A1C900240AD1 /* ListTableViewCell.swift */; };
 		C06CFEFD2481A1E900240AD1 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFEFC2481A1E900240AD1 /* GridCollectionViewCell.swift */; };
 		C06CFF012483E7F800240AD1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFF002483E7F800240AD1 /* DetailViewController.swift */; };
+		C06CFF0624845DF400240AD1 /* BottomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CFF0524845DF400240AD1 /* BottomBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C06CFEFA2481A1C900240AD1 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		C06CFEFC2481A1E900240AD1 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		C06CFF002483E7F800240AD1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C06CFF0524845DF400240AD1 /* BottomBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				C06CFEFA2481A1C900240AD1 /* ListTableViewCell.swift */,
 				C06CFEFC2481A1E900240AD1 /* GridCollectionViewCell.swift */,
 				C06CFEF02480C75B00240AD1 /* Detailed.swift */,
+				C06CFF0524845DF400240AD1 /* BottomBtn.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				C06CFED72480A9C200240AD1 /* AppDelegate.swift in Sources */,
 				C06CFEFD2481A1E900240AD1 /* GridCollectionViewCell.swift in Sources */,
 				C06CFEF924814AF100240AD1 /* HashedEmail.swift in Sources */,
+				C06CFF0624845DF400240AD1 /* BottomBtn.swift in Sources */,
 				C06CFEED2480C72500240AD1 /* Grid.swift in Sources */,
 				C06CFED92480A9C200240AD1 /* SceneDelegate.swift in Sources */,
 				C06CFEEF2480C73C00240AD1 /* List.swift in Sources */,

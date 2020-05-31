@@ -10,6 +10,8 @@ import UIKit
 
 class Grid: UICollectionView {
     
+    private var users = MockUser()
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         setUpCollectionView()
@@ -31,11 +33,13 @@ class Grid: UICollectionView {
 
 extension Grid: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        let mockUsers = users.generateMockUser()
+        return mockUsers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GridCollectionViewCell
+        
         return cell
     }
     

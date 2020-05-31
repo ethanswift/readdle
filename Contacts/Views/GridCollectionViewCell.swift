@@ -39,6 +39,7 @@ class GridCollectionViewCell: UICollectionViewCell {
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     func makeConstraints() {

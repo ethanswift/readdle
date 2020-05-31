@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private var apiCall = API()
+    private var mockUser = MockUser()
     private var listTable = List(frame: .zero, style: .plain)
     private var layout = UICollectionViewFlowLayout()
     private var gridCollection = Grid(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let user = apiCall.retrieveData()
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -74,6 +73,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
+        detailVC.user = mockUser.generateMockUser()[indexPath.row]
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
@@ -81,6 +81,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
+        detailVC.user = mockUser.generateMockUser()[indexPath.row]
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

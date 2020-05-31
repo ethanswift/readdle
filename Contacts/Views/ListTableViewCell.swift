@@ -12,8 +12,10 @@ class ListTableViewCell: UITableViewCell {
     
     private var avatarView = UIImageView()
     private var onlineDotView = UIView()
-    private var nameLbl = UILabel()
+    var nameLbl = UILabel()
     private var api = API()
+    private var users = MockUser()
+    var cellTag: Int = 0
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,7 +44,7 @@ class ListTableViewCell: UITableViewCell {
         onlineDotView.frame.size = CGSize(width: 8, height: 8)
         onlineDotView.layer.cornerRadius = onlineDotView.frame.size.height / 2
         self.addSubview(onlineDotView)
-        nameLbl.text = "Beau Lebens"
+//        nameLbl.text = "\(self.cellTag)"
         nameLbl.font = UIFont.systemFont(ofSize: 16)
         self.addSubview(nameLbl)
         setUpConstraints()
