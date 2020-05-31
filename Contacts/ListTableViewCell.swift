@@ -25,7 +25,6 @@ class ListTableViewCell: UITableViewCell {
     }
     
     func setUpView() {
-        contentView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         // Initialization code
         contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 50)
         avatarView.frame.size = CGSize(width: 50, height: 50)

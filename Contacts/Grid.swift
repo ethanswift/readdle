@@ -10,7 +10,6 @@ import UIKit
 
 class Grid: UICollectionView {
     
-    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         setUpCollectionView()
@@ -18,6 +17,7 @@ class Grid: UICollectionView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setUpCollectionView()
     }
     
     func setUpCollectionView() {
@@ -30,7 +30,7 @@ class Grid: UICollectionView {
 
 extension Grid: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 60
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,6 +41,9 @@ extension Grid: UICollectionViewDataSource {
 }
 
 extension Grid: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
     
 }
 
